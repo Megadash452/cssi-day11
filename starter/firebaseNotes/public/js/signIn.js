@@ -1,6 +1,6 @@
 console.log("sign in .js")
 
-document.querySelector("#sign-in").addEventListener('click', e => {
+const signIn = e => {
     let provider = new firebase.auth.GoogleAuthProvider();
     console.log("sign in");
 
@@ -15,11 +15,12 @@ document.querySelector("#sign-in").addEventListener('click', e => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
+        var email = error.email; // The email of the user's account used.
+        var credential = error.credential; // The firebase.auth.AuthCredential type that was used.
         
-        console.log("Oauth broken.....//", errorCode, " > ", errorMessage);
+        console.log("Oauth broken.....//", errorCode, " > ", errorMessage, '\n\n',
+            "Email: ", email, '\n',
+            "Credential: ", credential, '\n'
+        );
   });
-});
+};
