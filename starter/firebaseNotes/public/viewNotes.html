@@ -37,13 +37,32 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal" id="edit-modal">
+            <div class="modal-background">
+            </div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Edit Note</p>
+                </header>
+                <section class="modal-card-body">
+                    Title
+                    <input class="input is-normal" type="text" placeholder="title" id="edit-title">
+                    Text
+                    <input class="input is-normal" type="text" placeholder="text" id="edit-text">
+                    <input class="hidden" type="text" id="edit-note-id">
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success" onclick="saveEdit()">Save changes</button>
+                    <button class="button" onclick="closeModal()">Cancel</button>
+                </footer>
+            </div>
+        </div>
+
         <footer class="footer">
             <div class="container">
                 <div class="content has-text-centered">
-                    <p>
-                        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>.
-                        The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. <br>
-                    </p>
+                    <p><strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. <br></p>
                 </div>
             </div>
         </footer>
