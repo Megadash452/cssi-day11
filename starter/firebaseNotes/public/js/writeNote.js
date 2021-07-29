@@ -24,5 +24,4 @@ const handleNoteSubmit = () => {
             document.getElementById('noteTitle').value = "";
             document.getElementById('noteText').value = "";
         });
-    // 3. Clear the form so that we can write a new note
 }

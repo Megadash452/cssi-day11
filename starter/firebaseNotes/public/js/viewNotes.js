@@ -16,11 +16,11 @@ function getNotes(uid) {
         const data = snapshot.val();
         notesDiv.innerHTML = '';
         for (let key in data)
-            renderNote(data[key]);
+            renderNote(data[key], key);
     });
 };
 
-function renderNote(note) {
+function renderNote(note, id) {
     console.log(note);
     notesDiv.innerHTML += `
         <div class="column is-one-quarter">
@@ -31,7 +31,16 @@ function renderNote(note) {
                 <div class="card-content">
                     <div class="content">${note.text}</div>
                 </div>
+                <footer class="card-footer">
+                    <a onclick="deleteNote('${id}')" href="#" class="card-footer-item">Delete</a>
+                </footer>
             </div>
         </div>
     ` 
+}
+
+function deleteNote(noteId) {
+    console.log("delete")
+
+    firebase.database().ref(`users/${googleUser.uid}/${noteId}`).remove();
 }
